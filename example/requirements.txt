@@ -1,0 +1,5 @@
+nose2
+sphinx
+scrapy
+scrapy-statsd-middleware==0.0.4
+mock

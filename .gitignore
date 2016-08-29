@@ -1,0 +1,6 @@
+*.pyc
+virtualenv
+scrapy_statsd.egg-info
+scrapy_statsd_middleware.egg-info
+dist
+build

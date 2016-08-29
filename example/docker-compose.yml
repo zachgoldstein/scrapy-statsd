@@ -1,0 +1,13 @@
+version: '2'
+services:
+  statsd:
+    image: hopsoft/graphite-statsd
+  spider:
+    image: dirbot:spider
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/opt/scrapy
+    links:
+      - statsd

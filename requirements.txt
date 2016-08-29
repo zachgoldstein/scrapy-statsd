@@ -1,0 +1,5 @@
+nose2
+sphinx
+scrapy
+statsd
+mock

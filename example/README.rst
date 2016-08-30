@@ -1,20 +1,18 @@
-======
+======================================
 Scrapy statsd middleware demonstration
-======
+======================================
 
 This is a demonstration of scrapy-statsd, a middleware plugin for sending
 scrapy stats to a local statsd daemon.
 
 The basis of this project is dirbot, a Scrapy project to scrape websites from public web directories.
 
-Docker Installation
-=====
+Installation & Usage
+====================
 
-docker-compose build
-docker-compose up -d
-docker-compose -f ./example/docker-compose.yml run spider bash -c "cd ./opt/scrapy/dirbot/ && scrapy crawl dmoz"
-
-
+* Build the docker images `docker-compose build`
+* Start the statsd container `docker-compose up -d`
+* Run the example spider: `docker-compose -f ./example/docker-compose.yml run spider bash -c "cd ./opt/scrapy/dirbot/ && scrapy crawl dmoz"`
 
 
 Items
@@ -58,3 +56,4 @@ This project uses a pipeline to filter out websites containing certain
 forbidden words in their description. This pipeline is defined in the class::
 
     dirbot.pipelines.FilterWordsPipeline
+

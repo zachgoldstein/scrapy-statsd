@@ -61,10 +61,18 @@ class StatsdMiddleware(object):
     except (AttributeError, ValueError):
       self.statsd_prefix = "{}.{}.".format(hostname, name)
 
-    self.statsd_client = StatsClient(host='localhost',
+    try:
+      host_ip = spider.settings["STATSD_HOST_IP"]
+      if host_ip is None:
+        raise ValueError
+    except (KeyError, ValueError):
+      host_ip = "0.0.0.0"
+
+    self.statsd_client = StatsClient(host=host_ip,
                                      port=8125,
                                      prefix=self.statsd_prefix,
                                      maxudpsize=512,
                                      ipv6=False)
-    spider.logger.info("Initialised statsd client with name {}".format(self.statsd_prefix))
+    spider.logger.info("Initialised statsd client with name {} "
+                       "on host {}".format(self.statsd_prefix,host_ip))
 

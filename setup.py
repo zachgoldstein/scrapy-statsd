@@ -11,7 +11,7 @@ with open('LICENSE') as f:
 
 setup(
     name='scrapy-statsd-middleware',
-    version='0.0.5',
+    version='0.0.8',
     description='Statsd integration middleware for scrapy',
     long_description=readme,
     author='Zach Goldstein',
@@ -25,4 +25,5 @@ setup(
     ],
     extras_require={
       'test': ['mock==2.0.0'],
+    }
 )

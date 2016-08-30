@@ -49,4 +49,14 @@ You should see stats show up under something like "stats.Z-MacBook-Pro.local.dmo
 Development
 ===========
 
-You can run the tests via `make test` 
+You can run the tests via `make test`.
+
+Contribute
+==========
+
+Please do! Check out [the issues](https://github.com/zachgoldstein/scrapy-statsd/issues), or make a PR.
+
+License
+=======
+
+[MIT](LICENSE) © Zach Goldstein. 
